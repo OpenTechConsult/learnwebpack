@@ -1,0 +1,31 @@
+{
+  "name": "learnwebpack",
+  "version": "1.0.0",
+  "description": "Yet another webpack learning tutorial project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenTechConsult/learnwebpack.git"
+  },
+  "keywords": [
+    "Webpack",
+    "Front-end",
+    "Build",
+    "Node",
+    "Npm",
+    "Git"
+  ],
+  "author": "OpenTechConsult",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenTechConsult/learnwebpack/issues"
+  },
+  "homepage": "https://github.com/OpenTechConsult/learnwebpack#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
