@@ -82,4 +82,11 @@ To see if all goes well and we get the correct output, we need to display the re
 ```
 
 Now if we open the file in the browser we should see the _Hello Webpack_ message in the console.
-  
+
+It's generally a bad idea to change the content of index.html manually. For example if we change the name of our entry point, the generated bundle will be renamed but our index.html will still reference  the old name. So we need to update html file manually every time we renamed the entry point or add a new one.
+
+Fortunately, we can easily fix that with **`html-webpack-plugin`**.
+
+To activate the plugin we need to create a **webpack.config.js** file in the root directory with the following content.
+
+The content demonstrates that to activate a plugin we need to include it with the `require` synthax and add it to the plugins array. We can also pass options to the pluging if we like to.
