@@ -10,9 +10,9 @@ After learning the fundamental concepts and terminologies of webpack, let's do s
 
 To start, let's create a new directory and cd into it. The initialize a new project.
 
-> `mkdir learnwebpack && cd learnwebpack`
-> `git init` : if you have git installed, initialize a git repo
-> `npm init` : initialize a new project by answering the necessary questions
+> `mkdir learnwebpack && cd learnwebpack` <br>
+> `git init` : if you have git installed, initialize a git repo <br>
+> `npm init` : initialize a new project by answering the necessary questions<br>
 
 Next, we need to install webpack and webpack CLI locally
 
@@ -46,3 +46,40 @@ The content of the generated **package.json** should be similar to the following
   }
 }
 ```
+
+## Create webpack tasks using npm custom scripts
+
+Webpack can also be used as simple task runner. We can create webpack tasks by including the name of our task followed by its instructions in the script section of the package.json file. The ***scripts*** section should look as following
+
+```json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  }
+  ```
+
+  We can reference locally installed npm packages by their name in the scripts property. Here we created two tasks. The first  is called **dev** and it use the webpack tool by calling its name and by add some additional flags to tell to run webpack in development mode.
+
+  The second task called **build** also use webpack tool by calling it name and by using the flag _--mode production_ to signify that it will run in production mode.
+
+  Before we test the tasks, let create a file called **index.js** inside a directory called **src**. Put the following code inside the index.js file `console.log("Hello, webpack");`. Now we can run the **dev** tasks to start webpack in development mode.
+
+  > `npm run dev`
+
+To see if all goes well and we get the correct output, we need to display the result in the browser. We create an `index.html`file in the `dist` folder.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started</title>
+  </head>
+  <body>
+    <script src="main.js"></script>
+  </body>
+</html>
+```
+
+Now if we open the file in the browser we should see the _Hello Webpack_ message in the console.
+  
